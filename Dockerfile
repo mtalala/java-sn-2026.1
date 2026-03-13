@@ -1,7 +1,7 @@
-FROM gradle:8.5-jdk17 AS builder
+FROM eclipse-temurin:17-jdk AS builder
 WORKDIR /app
 COPY . .
-RUN gradle build -x test
+RUN ./gradlew build -x test
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
